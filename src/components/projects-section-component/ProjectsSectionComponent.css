@@ -1,0 +1,41 @@
+.project-section-wrapper {
+    position: relative;
+    background: #252525;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 40px 0 50px 0;
+}
+
+.projects-section-title {
+    padding: 40px 0 0 0;
+    width: 1000px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.projects-section-title span {
+    font-size: 30px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #00A9DE, #D100C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.projects-section-title p {
+    margin-top: 15px;
+    font-weight: normal;
+    color: white;
+}
+
+
+@media (max-width: 800px) {
+    .projects-section-title {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+}

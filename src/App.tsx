@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HeaderComponent from "./components/header-component/HeaderComponent";
+import HeroComponent from "./components/hero-component/HeroComponent";
+import FooterComponent from "./components/footer-component/FooterComponent";
+import TechStackComponent from "./components/teck-stack-component/TechStackComponent";
+import AboutMeSection from "./components/about-me-component/AboutMeSection";
+import ProjectsSectionComponent from "./components/projects-section-component/ProjectsSectionComponent";
+import ContactMeComponent from "./components/contact-me-component/ContactMeComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+            <HeaderComponent/>
+            <HeroComponent/>
+            <TechStackComponent/>
+            <AboutMeSection/>
+            <ProjectsSectionComponent/>
+            <ContactMeComponent/>
+            <FooterComponent/>
+        </>
+    );
+};
 
 export default App;
