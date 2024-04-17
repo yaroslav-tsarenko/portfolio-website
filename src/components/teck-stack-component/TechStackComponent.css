@@ -33,6 +33,16 @@
     justify-items: center;
 }
 
+.tech-item {
+    position: relative;
+    display: inline-block;
+}
+
+.tech-item:hover .tip-component {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
 .tech-stack-container img{
     transition: 0.3s ease-in-out;
 }
@@ -45,6 +55,7 @@
 
 .tech-stack-container img{
     margin: 15px;
+    cursor: pointer;
 }
 
 

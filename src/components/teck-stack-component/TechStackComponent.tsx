@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./TechStackComponent.css";
 import ReactLogo from '../../assets/images/react-logo.svg';
 import ReduxLogo from '../../assets/images/redux-logo.svg';
@@ -16,29 +16,55 @@ import MongoDBLogo from '../../assets/images/mongodb-logo.svg';
 import JQueryLogo from '../../assets/images/jquery-logo.svg';
 import NodeJSLogo from '../../assets/images/nodejs-logo.svg';
 import JestLogo from '../../assets/images/jest-testing-logo.svg';
+import Tip from "../description-popup/Tip";
 const TechStackComponent = () => {
+    const [tipText, setTipText] = useState<string | null>(null);
+
+    const handleMouseEnter = (text: string) => {
+        setTipText(text);
+    };
+
+    const handleMouseLeave = () => {
+        setTipText(null);
+    };
+
+    const techStack = [
+        { src: ReactLogo, alt: "React Logo", tip: "React.js" },
+        { src: ReduxLogo, alt: "Redux Logo", tip: "Redux" },
+        { src: TypeScriptLogo, alt: "TypeScript Logo", tip: "TypeScript" },
+        { src: JavScriptLogo, alt: "JavaScript Logo", tip: "JavaScript" },
+        { src: HTMLLogo, alt: "HTML Logo", tip: "HTML" },
+        { src: CSSLogo, alt: "CSS Logo", tip: "CSS" },
+        { src: TailWindLogo, alt: "TailWindLogo Logo", tip: "Tailwind" },
+        { src: SassLogo, alt: "SASS", tip: "SASS" },
+        { src: BootstrapLogo, alt: "BootstrapLogo Logo", tip: "Bootstrap" },
+        { src: GitLogo, alt: "Git Logo", tip: "GIT" },
+        { src: WebStormLogo, alt: "WebStormLogo Logo", tip: "Web Storm" },
+        { src: PostgresLogo, alt: "Postgres Logo", tip: "PostgresSQL" },
+        { src: MongoDBLogo, alt: "MongoDB Logo", tip: "MongoDB" },
+        { src: JQueryLogo, alt: "Jquery Logo", tip: "JQuery" },
+        { src: NodeJSLogo, alt: "Node Logo", tip: "Node.js" },
+        { src: JestLogo, alt: "Jest Logo", tip: "Jest" },
+    ];
+
     return (
         <div className="tech-stack-wrapper">
             <div className="tech-stack-container-content">
                 <h2>My Tech Stack</h2>
                 <p>Technologies i've been working recently</p>
                 <div className="tech-stack-container">
-                    <img src={ReactLogo} alt="React Logo" width={75}/>
-                    <img src={ReduxLogo} alt="Redux Logo" width={75}/>
-                    <img src={TypeScriptLogo} alt="TypeScript Logo" width={75}/>
-                    <img src={JavScriptLogo} alt="JavaScript Logo" width={75}/>
-                    <img src={NodeJSLogo} alt="NodeJS Logo" width={75}/>
-                    <img src={HTMLLogo} alt="HTML Logo" width={75}/>
-                    <img src={CSSLogo} alt="CSS Logo" width={75}/>
-                    <img src={TailWindLogo} alt="TailWind Logo" width={75}/>
-                    <img src={SassLogo} alt="Sass Logo" width={75}/>
-                    <img src={JQueryLogo} alt="Jquery Logo" width={75}/>
-                    <img src={BootstrapLogo} alt="BootStrapLogo" width={75}/>
-                    <img src={GitLogo} alt="Git Logo" width={75}/>
-                    <img src={WebStormLogo} alt="WebStorm Logo" width={75}/>
-                    <img src={PostgresLogo} alt="Postgres Logo" width={75}/>
-                    <img src={JestLogo} alt="Jest Logo" width={75}/>
-                    <img src={MongoDBLogo} alt="MongoDB Logo" width={75}/>
+                    {techStack.map((tech, index) => (
+                        <div className="tech-item" key={index}>
+                            <img
+                                src={tech.src}
+                                alt={tech.alt}
+                                width={75}
+                                onMouseEnter={() => handleMouseEnter(tech.tip)}
+                                onMouseLeave={handleMouseLeave}
+                            />
+                            {tipText === tech.tip && <Tip text={tipText}/>}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
