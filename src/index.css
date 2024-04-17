@@ -2,6 +2,10 @@
   --gradient-text-color: linear-gradient(90deg, #FFC107 0%, #FF9800 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;

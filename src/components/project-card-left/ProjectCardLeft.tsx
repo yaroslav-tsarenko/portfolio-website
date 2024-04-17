@@ -4,7 +4,7 @@ import {IoIosLink} from "react-icons/io";
 import {IoLogoGithub} from "react-icons/io";
 
 interface ProjectCardProps {
-    image: string | File;
+    video: string | File; // Changed from image to video
     projectTitle: string;
     projectDescription: string;
     projectStack: string[];
@@ -13,19 +13,19 @@ interface ProjectCardProps {
 }
 
 const ProjectCardLeft: React.FC<ProjectCardProps> = ({
-                                                         image,
+                                                         video, // Changed from image to video
                                                          projectTitle,
                                                          projectDescription,
                                                          projectStack,
                                                          githubUrl,
                                                          liveDemoUrl
                                                      }) => {
-    const imageUrl = typeof image === 'string' ? image : URL.createObjectURL(image);
+    const videoUrl = typeof video === 'string' ? video : URL.createObjectURL(video); // Changed from imageUrl to videoUrl
 
     return (
         <div className="project-card-wrapper">
             <div className="project-card">
-                <img src={imageUrl} alt={projectTitle}/>
+                <video src={videoUrl} controls autoPlay muted />
                 <div className="project-card-description">
                     <h2>{projectTitle}</h2>
                     <p>{projectDescription}</p>
@@ -45,9 +45,7 @@ const ProjectCardLeft: React.FC<ProjectCardProps> = ({
                 </div>
             </div>
         </div>
-
-    )
-        ;
+    );
 };
 
 export default ProjectCardLeft;
