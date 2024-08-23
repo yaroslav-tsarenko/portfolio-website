@@ -25,7 +25,7 @@ const ProjectsSectionComponent = () => {
                 This project have authorization, payment system, AI assistanth which can helps you to find the best shipping option for your package"
                 projectStack={["React.js", "JavaScript", "Node.js", "MongoDB"]}
                 githubUrl={"https://github.com/yaroslav-tsarenko/jarvis-ai-service.git"}
-                liveDemoUrl={"https://jarvis-ai-service.onrender.com"}/>
+                liveDemoUrl={"https://openshipai.onrender.com/"}/>
             <ProjectCardLeft
                 video={BrainwaveAiVideo}
                 projectTitle="Brainwave AI"
